@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>simpletemplate</title>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+
+            .light {
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(105, 105, 105, 0.9) 0px 0px 0px 1px;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .light {
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            }
+        }
+
+        body {
+            font-family: monospace;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+
+        .dark {
+            background-color: dimgray;
+            color: white;
+            border-radius: 4px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .light {
+            border-radius: 4px;
+            padding: 10px;
+            min-width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <b>simpletemplate demo</b>
+    <br><br>
+
+    variables
+    <div class="container">
+        <div class="dark">
+            <code>
+                    &#123;&#123; number &#125;&#125;
+                </code>
+        </div>
+        <div class="light">
+            {{ number }}
+        </div>
+    </div>
+
+    for loop
+    <div class="container">
+        <div class="dark">
+            <code>
+                &#123;&#123; for names in name &#125;&#125;<br>
+                &gt; &#123;&#123; names &#125;&#125;, index &#123;&#123; index &#125;&#125;<br>
+                &#123;&#123; endfor &#125;&#125;
+            </code>
+        </div>
+        <div class="light">
+            {{ for names in name }}
+            > {{ names }}, index {{ index }}<br>
+            {{ endfor }}
+        </div>
+    </div>
+
+    displaying as list
+    <div class="container">
+        <div class="dark">
+            <code>
+                    &#123;&#123; name &#125;&#125;<br>
+            </code>
+        </div>
+        <div class="light">
+            {{ name }}
+        </div>
+    </div>
+
+    accessing by index
+    <div class="container">
+        <div class="dark">
+            <code>
+                &#123;&#123; name[0] &#125;&#125;    
+            </code>
+        </div>
+        <div class="light">
+            {{ name[0] }}
+        </div>
+    </div>
+
+    conditional
+    <div class="container">
+        <div class="dark">
+            <code>
+                &#123;&#123; if color &#125;&#125;<br>
+                &#123;&#123; color &#125;&#125;<br>
+                &#123;&#123; else &#125;&#125;<br>
+                &lt;p&gt;no color set&lt;/p&gt;<br>
+                &#123;&#123; endif &#125;&#125;
+            </code>
+        </div>
+        <div class="light">
+            {{ if color }}
+            {{ color }}
+            {{ else }}
+            <p>no color set</p>
+            {{ endif }}
+        </div>
+    </div>
+
+    github.com/guiszk/simpletemplate
+</body>
+
+</html>
