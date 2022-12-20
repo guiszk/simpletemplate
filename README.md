@@ -6,6 +6,7 @@ Template engine written entirely in rust.
 
 ```rust
 // main.rs
+use simpletemplate::render;
 use serde_json::{json};
 
 fn main() {
