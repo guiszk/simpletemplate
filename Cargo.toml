@@ -1,6 +1,6 @@
 [package]
 name = "simpletemplate"
-description = "HTM template engine."
+description = "HTML template engine."
 authors = ["guiszk <guiszk@protonmail.com>"]
 version = "0.1.0"
 edition = "2021"
