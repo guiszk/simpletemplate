@@ -1,8 +1,24 @@
 # simpletemplate
 
-This is a template engine written entirely in rust.
+Template engine written entirely in rust.
 
 ## usage  
+
+```rust
+// main.rs
+use serde_json::{json};
+
+fn main() {
+    let data = json!({
+        "name": ["Bob Belcher"],
+    });
+    let content = "{{ name }}";
+    let res = render(content, data);
+    println!("{}", res); //returns Bob Belcher
+}
+```
+
+## template usage
 
 For variables, use `{{ variable_name }}`.
 
@@ -10,7 +26,7 @@ For array indexing, use ``{{ array_name[index] }}``.
 
 To iterate over an array:
 
-```bash
+```rust
 {{ for loop_variable in loop_iterable }} 
     loop_body 
 {{ endfor }}
@@ -18,7 +34,7 @@ To iterate over an array:
 
 To access the index:
 
-```bash
+```rust
 {{ for loop_variable in loop_iterable }} 
     {{ index }}
 {{ endfor }}
@@ -26,7 +42,7 @@ To access the index:
 
 If statements: `if_body` is rendered if `condition` is not `null`, `false`, or `"false"`.
 
-```bash
+```rust
 {{ if condition }} 
     if_body 
 {{ else }} 
