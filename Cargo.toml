@@ -11,9 +11,6 @@ repository = "https://github.com/guiszk/simpletemplate"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-handlebars = "4.3.5"
 regex = "1.7.0"
-rocket = "0.5.0-rc.2"
-serde = "1.0"
 serde_json = "1.0"
 string-join = "0.1.2"
